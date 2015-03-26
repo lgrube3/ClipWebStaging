@@ -1,0 +1,13 @@
+<form ng-submit="loginUser()">
+    <label>
+        <p>Email:</p>
+    </label>
+    <input type="text" data-ng-model="login.email" placeholder="Email" name="email">
+
+    <label>
+        <p>Password:</p>
+    </label>
+    <input type="password" data-ng-model="login.password" placeholder="Password" name="password">
+
+    <input type="submit" value="Log In" data-ng-disabled="!login.email || !login.password">
+</form>
