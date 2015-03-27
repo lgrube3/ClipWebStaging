@@ -1,13 +1,21 @@
-<form ng-submit="loginUser()">
-    <label>
-        <p>Email:</p>
-    </label>
-    <input type="text" data-ng-model="login.email" placeholder="Email" name="email">
-
-    <label>
-        <p>Password:</p>
-    </label>
-    <input type="password" data-ng-model="login.password" placeholder="Password" name="password">
-
-    <input type="submit" value="Log In" data-ng-disabled="!login.email || !login.password">
-</form>
+<div class="signup-view">
+    <div ng-include="'assets/ui-components/loggedout-nav.html'"></div>
+    <div class="auth-container">
+        <div class="auth-block">
+            <img class="blue-logo-auth" src="assets/img/blue-logo-auth.png" />
+            <p class="auth-description">Login to your Clip account</p>
+            <form ng-submit="loginUser()">
+                <p>
+                    <input type="text" data-ng-model="login.email" placeholder="Email" name="email">
+                </p>
+                <p>
+                    <input type="password" data-ng-model="login.password" placeholder="Password" name="password">
+                </p>
+                <p>
+                    <input type="submit" class="btn-main btn-large" value="Log In" data-ng-disabled="!login.email || !login.password">
+                </p>
+            </form>
+        </div>
+        <p class="additional-text">Don't have an account? <a href="#signup">Get Started</a></p>
+    </div>
+</div>

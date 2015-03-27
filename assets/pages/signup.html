@@ -1,26 +1,34 @@
-<p>Start browsing interested candidates</p>
-<form ng-submit="signupUser()">
-    <p>
-        <input type="text" data-ng-model="signup.email" placeholder="Email" name="email">
-    </p>
-    <p>
-        <input type="password" data-ng-model="signup.password" placeholder="Password" name="password">
-    </p>
-    <p>
-        <input type="text" data-ng-model="signup.company" placeholder="Company Name">
-    </p>
-    <p>
-        <select ng-options="item.name for item in positionValues" ng-model="signup.selectedPosition">
-            <option style="display:none" value="">Position Type</option>
-        </select>
-    </p>
-    <p>
-        <select ng-options="item.name for item in locationValues" ng-model="signup.selectedLocation">
-            <option style="display:none" value="">City</option>
-        </select>
-    </p>
-    <p>{{signup}}</p>
-    <p>
-        <input type="submit" value="Sign Up" data-ng-disabled="!signup.email || !signup.password || !signup.company || !signup.selectedPosition || !signup.selectedLocation">
-    </p>
-</form>
+<div class="signup-view">
+    <div ng-include="'assets/ui-components/loggedout-nav.html'"></div>
+    <div class="auth-container">
+        <div class="auth-block">
+            <img class="blue-logo-auth" src="assets/img/blue-logo-auth.png" />
+            <p class="auth-description">Start browsing interested candidates</p>
+            <form ng-submit="signupUser()">
+                <p>
+                    <input type="text" data-ng-model="signup.email" placeholder="Email" name="email">
+                </p>
+                <p>
+                    <input type="password" data-ng-model="signup.password" placeholder="Password" name="password">
+                </p>
+                <p>
+                    <input type="text" data-ng-model="signup.company" placeholder="Company Name">
+                </p>
+                <p>
+                    <select ng-options="item.name for item in positionValues" ng-model="signup.selectedPosition">
+                        <option style="display:none" value="">Position Type</option>
+                    </select>
+                </p>
+                <p>
+                    <select ng-options="item.name for item in locationValues" ng-model="signup.selectedLocation">
+                        <option style="display:none" value="">City</option>
+                    </select>
+                </p>
+                <p>
+                    <input type="submit" class="btn-main btn-large" value="Sign Up" data-ng-disabled="!signup.email || !signup.password || !signup.company || !signup.selectedPosition || !signup.selectedLocation">
+                </p>
+            </form>
+        </div>
+        <p class="additional-text">Already have an account? <a href="#login">Login</a></p>
+    </div>
+</div>

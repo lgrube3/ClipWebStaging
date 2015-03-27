@@ -18,8 +18,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- font awesome from BootstrapCDN -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Open Sans Google Font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <!-- Roboto Google Font -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
     <!-- compiled CSS -->
     
+        <link rel="stylesheet" type="text/css" href="vendor/normalize.css/normalize.css" />
+        
         <link rel="stylesheet" type="text/css" href="assets/clip-0.1.0.css" />
         
             <!-- compiled JavaScript -->
@@ -35,18 +41,8 @@
 </head>
 
 <body>
-    <ul>
-        <li><a href="#/">Home</a>
-        </li>
-        <li><a href="#login">login</a>
-        </li>
-        <li><a href="#signup">signup</a>
-        </li>
-        <li><a href="#/" ng-click="logoutUser()">logout</a>
-        </li>
-    </ul>
     <!-- angular templating -->
-    <div ng-view></div>
+    <div class="views" ng-view></div>
     <!-- full screen loader that gets shown on pretty much all API calls -->
     <div class="loading" ng-show="loading">loading</div>
 </body>
