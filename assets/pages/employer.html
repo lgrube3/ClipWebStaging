@@ -1,1 +1,54 @@
-<p>employer dashboard</p>
+<div class="employer-view">
+    <div class="top-bar">
+        <a class="mobile-menu-btn">
+            <span></span>
+        </a>
+        <a href="#/" class="logo">
+            <div class="logo-container">
+                <img src="assets/img/white-logo.png" />
+            </div>
+        </a>
+        <div class="company-name">{{currentJobDetails._company_name}}</div>
+        <div class="logout" ng-click="logoutUser()">Logout</div>
+    </div>
+    <div class="secondary-bar">
+        <div class="job-selection">
+            <div class="dropdown">
+                <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="position-info">
+                        <span class="position-type">{{currentJobDetails.JobPosition[0].name}}</span>
+                        <span class="position-location">{{currentJobDetails.Location[0].name}}</span>
+                    </div>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li ng-repeat="job in myJobs" ng-click="changeCurrentJob(job.Id)"><span class="position-type">{{job.JobPosition[0].name}}</span><span class="position-location">{{job.Location[0].name}}</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="add-job btn-main" data-toggle="modal" data-target="#modalNewPosition">+ New Position</div>
+    </div>
+    <div class="employer-main">
+        <div class="clip-container">
+            <div class="intro-text">
+                <p>You are currently browsing candidates interested in your <strong>{{currentJobDetails.JobPosition[0].name}}
+</strong> position located in <strong>{{currentJobDetails.Location[0].name}}</strong>. Email those who look like a good fit for an interview.</p>
+            </div>
+            <div class="clip" ng-repeat="clip in currentJobClips">
+                <div class="clip-section-video">
+                    <video controls>
+                        <source ng-src="{{getClipURL(clip)}}" type="video/mp4">
+                            Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="clip-section-contact">
+                    <p>{{clip.Available.User.email}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="menu">
+    menu
+</div>
+<div ng-include="'assets/ui-components/modal-new-position.html'"></div>

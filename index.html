@@ -26,6 +26,8 @@
     
         <link rel="stylesheet" type="text/css" href="vendor/normalize.css/normalize.css" />
         
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.css" />
+        
         <link rel="stylesheet" type="text/css" href="assets/clip-0.1.0.css" />
         
             <!-- compiled JavaScript -->
@@ -44,7 +46,10 @@
     <!-- angular templating -->
     <div class="views" ng-view></div>
     <!-- full screen loader that gets shown on pretty much all API calls -->
-    <div class="loading" ng-show="loading">loading</div>
+    <div class="loading" ng-show="loading">
+        <div class="loader">Loading...</div>
+        <img src="assets/img/white-logo.png" />
+    </div>
 </body>
 
 </html>

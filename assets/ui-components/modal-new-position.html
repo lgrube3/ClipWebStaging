@@ -1,0 +1,30 @@
+<!-- Modal -->
+<div class="modal fade" id="modalNewPosition" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="employerCtrl">
+    <div class="modal-dialog card-container">
+        <div class="card-block">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Fill Another Open Position</h4>
+            </div>
+            <form ng-submit="createPosition()">
+                <div class="modal-body">
+                    <p>
+                        <select ng-options="item.name for item in positionValues" ng-model="newJob.selectedPosition">
+                            <option style="display:none" value="">Position Type</option>
+                        </select>
+                    </p>
+                    <p>
+                        <select ng-options="item.name for item in locationValues" ng-model="newJob.selectedLocation">
+                            <option style="display:none" value="">City</option>
+                        </select>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <p>
+                        <input type="submit" class="btn-main btn-large" value="Create" data-ng-disabled="!newJob.selectedPosition || !newJob.selectedLocation">
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
